@@ -108,7 +108,7 @@ dx cat "$APPDATA:/misc/gatk_resource_archives/${subgenome}.fasta-index.tar.gz" |
 # Run GATK DiagnoseTargets
 #
 mark-section "DiagnoseTargets"
-$java -jar GenomeAnalysisTK.jar -T DiagnoseTargets -R genome.fa -I "$sorted_bam_path" -L "$targets_bed_path" -o DiagnoseTargets.vcf -missing MissingTargets.vcf
+$java -jar GenomeAnalysisTK.jar -T DiagnoseTargets -R genome.fa -I "$sorted_bam_path" -L "$targets_bed_A_path" -L "$targets_bed_B_path"  -o DiagnoseTargets.vcf -missing MissingTargets.vcf
 
 mark-section "DepthOfCoverage"
 $java -jar GenomeAnalysisTK.jar -T DepthOfCoverage -R genome.fa -I "$sorted_bam_path" -L "$targets_bed_A_path" -o DepthOfCoverage.txt -geneList "$refseq_A_path" -ct 20 --minMappingQuality 20
@@ -120,19 +120,19 @@ rm -f "$sorted_bam_path"
 
 
 mark-section "uploading results"
-mkdir -p ~/out/dtvcf/QC / ~/out/mtvcf/QC /
-mv DiagnoseTargets.vcf ~/out/dtvcf/QC /"$sorted_bam_prefix".dt.vcf
-mv MissingTargets.vcf ~/out/mtvcf/QC /"$sorted_bam_prefix".mt.vcf
-mkdir -p ~/out/DepthOfCoverage1/QC / ~/out/DepthOfCoverage2/QC / ~/out/DepthOfCoverage3/QC / ~/out/DepthOfCoverage4/QC /
-mkdir -p ~/out/DepthOfCoverage5/QC / ~/out/DepthOfCoverage6/QC / ~/out/DepthOfCoverage7/QC / ~/out/DepthOfCoverage8/QC /
-mv DepthOfCoverage.txt ~/out/DepthOfCoverage1/QC /"$sorted_bam_prefix".DepthOfCoverage
-mv DepthOfCoverage.txt.sample_cumulative_coverage_counts ~/out/DepthOfCoverage2/QC /"$sorted_bam_prefix".DepthOfCoverage.sample_cumulative_coverage_counts
-mv DepthOfCoverage.txt.sample_cumulative_coverage_proportions ~/out/DepthOfCoverage3/QC /"$sorted_bam_prefix".DepthOfCoverage.sample_cumulative_coverage_proportions
-mv DepthOfCoverage.txt.sample_gene_summary ~/out/DepthOfCoverage4/QC /"$sorted_bam_prefix".DepthOfCoverage.sample_gene_summary 
-mv DepthOfCoverage.txt.sample_interval_statistics ~/out/DepthOfCoverage5/QC /"$sorted_bam_prefix".DepthOfCoverage.sample_interval_statistics
-mv DepthOfCoverage.txt.sample_interval_summary ~/out/DepthOfCoverage6/QC /"$sorted_bam_prefix".DepthOfCoverage.sample_interval_summary
-mv DepthOfCoverage.txt.sample_statistics ~/out/DepthOfCoverage7/QC /"$sorted_bam_prefix".DepthOfCoverage.sample_statistics
-mv DepthOfCoverage.txt.sample_summary ~/out/DepthOfCoverage8/QC /"$sorted_bam_prefix".DepthOfCoverage.sample_summary
+mkdir -p ~/out/dtvcf/QC/ ~/out/mtvcf/QC/
+mv DiagnoseTargets.vcf ~/out/dtvcf/QC/"$sorted_bam_prefix".dt.vcf
+mv MissingTargets.vcf ~/out/mtvcf/QC/"$sorted_bam_prefix".mt.vcf
+mkdir -p ~/out/DepthOfCoverage1/QC/ ~/out/DepthOfCoverage2/QC/ ~/out/DepthOfCoverage3/QC/ ~/out/DepthOfCoverage4/QC/
+mkdir -p ~/out/DepthOfCoverage5/QC/ ~/out/DepthOfCoverage6/QC/ ~/out/DepthOfCoverage7/QC/ ~/out/DepthOfCoverage8/QC/
+mv DepthOfCoverage.txt ~/out/DepthOfCoverage1/QC/"$sorted_bam_prefix".DepthOfCoverage
+mv DepthOfCoverage.txt.sample_cumulative_coverage_counts ~/out/DepthOfCoverage2/QC/"$sorted_bam_prefix".DepthOfCoverage.sample_cumulative_coverage_counts
+mv DepthOfCoverage.txt.sample_cumulative_coverage_proportions ~/out/DepthOfCoverage3/QC/"$sorted_bam_prefix".DepthOfCoverage.sample_cumulative_coverage_proportions
+mv DepthOfCoverage.txt.sample_gene_summary ~/out/DepthOfCoverage4/QC/"$sorted_bam_prefix".DepthOfCoverage.sample_gene_summary 
+mv DepthOfCoverage.txt.sample_interval_statistics ~/out/DepthOfCoverage5/QC/"$sorted_bam_prefix".DepthOfCoverage.sample_interval_statistics
+mv DepthOfCoverage.txt.sample_interval_summary ~/out/DepthOfCoverage6/QC/"$sorted_bam_prefix".DepthOfCoverage.sample_interval_summary
+mv DepthOfCoverage.txt.sample_statistics ~/out/DepthOfCoverage7/QC/"$sorted_bam_prefix".DepthOfCoverage.sample_statistics
+mv DepthOfCoverage.txt.sample_summary ~/out/DepthOfCoverage8/QC/"$sorted_bam_prefix".DepthOfCoverage.sample_summary
 
 # upload 
 dx-upload-all-outputs --parallel
