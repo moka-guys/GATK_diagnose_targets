@@ -111,7 +111,11 @@ mark-section "DiagnoseTargets"
 $java -jar GenomeAnalysisTK.jar -T DiagnoseTargets -R genome.fa -I "$sorted_bam_path" -L "$targets_bed_path" -o DiagnoseTargets.vcf -missing MissingTargets.vcf
 
 mark-section "DepthOfCoverage"
-$java -jar GenomeAnalysisTK.jar -T DepthOfCoverage -R genome.fa -I "$sorted_bam_path" -L "$targets_bed_path" -o DepthOfCoverage.txt -geneList "$refseq_path" -ct 20 --minMappingQuality 20
+$java -jar GenomeAnalysisTK.jar -T DepthOfCoverage -R genome.fa -I "$sorted_bam_path" -L "$targets_bed_A_path" -o DepthOfCoverage.txt -geneList "$refseq_A_path" -ct 20 --minMappingQuality 20
+$java -jar GenomeAnalysisTK.jar -T DepthOfCoverage -R genome.fa -I "$sorted_bam_path" -L "$targets_bed_B_path" -o DepthOfCoverage2.txt -geneList "$refseq_B_path" -ct 20 --minMappingQuality 20
+
+sed -n '/Gene/!p' DepthOfCoverage2.txt.sample_gene_summary >> DepthOfCoverage.txt.sample_gene_summary
+
 rm -f "$sorted_bam_path"
 
 

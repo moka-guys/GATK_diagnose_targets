@@ -31,15 +31,29 @@
       "patterns": ["*.bai"]
     },
     {
-      "name": "targets_bed",
-      "label": "Intervals for DiagnoseTargets",
-      "help": "A BED file with coordinates for DiagnoseTargets.",
+      "name": "targets_bed_A",
+      "label": "Intervals for DiagnoseTargets A",
+      "help": "A BED file with coordinates for DiagnoseTargets for subpanelA.",
       "class": "file",
       "patterns": ["*.bed"]
     },
     {
-      "name": "refseq",
-      "label": "refseq genes",
+      "name": "targets_bed_B",
+      "label": "Intervals for DiagnoseTargets B",
+      "help": "A BED file with coordinates for DiagnoseTargets for subpanelB",
+      "class": "file",
+      "patterns": ["*.bed"]
+    },
+    {
+      "name": "refseq_A",
+      "label": "refseq genes_A",
+      "help": "refseq sorted.",
+      "class": "file",
+      "patterns": ["*.txt"]
+    },
+    {
+      "name": "refseq_B",
+      "label": "refseq genes_B",
       "help": "refseq sorted.",
       "class": "file",
       "patterns": ["*.txt"]
