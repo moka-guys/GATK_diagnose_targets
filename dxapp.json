@@ -31,32 +31,11 @@
       "patterns": ["*.bai"]
     },
     {
-      "name": "targets_bed_A",
-      "label": "Intervals for DiagnoseTargets A",
-      "help": "A BED file with coordinates for DiagnoseTargets for subpanelA.",
+      "name": "targets_bed",
+      "label": "Intervals for DiagnoseTargets",
+      "help": "A BED file with coordinates for DiagnoseTargets.",
       "class": "file",
       "patterns": ["*.bed"]
-    },
-    {
-      "name": "targets_bed_B",
-      "label": "Intervals for DiagnoseTargets B",
-      "help": "A BED file with coordinates for DiagnoseTargets for subpanelB",
-      "class": "file",
-      "patterns": ["*.bed"]
-    },
-    {
-      "name": "refseq_A",
-      "label": "refseq genes_A",
-      "help": "refseq sorted.",
-      "class": "file",
-      "patterns": ["*.txt"]
-    },
-    {
-      "name": "refseq_B",
-      "label": "refseq genes_B",
-      "help": "refseq sorted.",
-      "class": "file",
-      "patterns": ["*.txt"]
     },
     {
       "name": "vendor_exome",
@@ -196,62 +175,6 @@
       "help": "VCF detailing missing intervals.",
       "class": "file",
       "patterns": ["*.vcf"]
-    },
-    {
-      "name": "DepthOfCoverage1",
-      "label": "DepthOfCoverage reports",
-      "help": "Coverage reports.",
-      "class": "file",
-      "patterns": ["*"]
-    },
-    {
-      "name": "DepthOfCoverage2",
-      "label": "DepthOfCoverage reports",
-      "help": "Coverage reports.",
-      "class": "file",
-      "patterns": ["*"]
-    },
-    {
-      "name": "DepthOfCoverage3",
-      "label": "DepthOfCoverage reports",
-      "help": "Coverage reports.",
-      "class": "file",
-      "patterns": ["*"]
-    },
-    {
-      "name": "DepthOfCoverage4",
-      "label": "DepthOfCoverage reports",
-      "help": "Coverage reports.",
-      "class": "file",
-      "patterns": ["*"]
-    },
-    {
-      "name": "DepthOfCoverage5",
-      "label": "DepthOfCoverage reports",
-      "help": "Coverage reports.",
-      "class": "file",
-      "patterns": ["*"]
-    },
-    {
-      "name": "DepthOfCoverage6",
-      "label": "DepthOfCoverage reports",
-      "help": "Coverage reports.",
-      "class": "file",
-      "patterns": ["*"]
-    },
-    {
-      "name": "DepthOfCoverage7",
-      "label": "DepthOfCoverage reports",
-      "help": "Coverage reports.",
-      "class": "file",
-      "patterns": ["*"]
-    },
-    {
-      "name": "DepthOfCoverage8",
-      "label": "DepthOfCoverage reports",
-      "help": "Coverage reports.",
-      "class": "file",
-      "patterns": ["*"]
     }
   ],
   "runSpec": {
