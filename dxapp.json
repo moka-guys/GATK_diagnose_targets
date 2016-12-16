@@ -38,13 +38,6 @@
       "patterns": ["*.bed"]
     },
     {
-      "name": "refseq",
-      "label": "refseq genes",
-      "help": "refseq sorted.",
-      "class": "file",
-      "patterns": ["*.txt"]
-    },
-    {
       "name": "vendor_exome",
       "label": "Vendor exome",
       "help": "(Optional) Choose the vendor exome (enrichment kit) whose target coordinates will be used to guide variation calling. If provided, this will supply the '-L' command-line option to GATK HaplotypeCaller. If not provided, the app will call variants everywhere and not restrict itself to any target coordinates. See the app help for more information.",
@@ -182,62 +175,6 @@
       "help": "VCF detailing missing intervals.",
       "class": "file",
       "patterns": ["*.vcf"]
-    },
-    {
-      "name": "DepthOfCoverage1",
-      "label": "DepthOfCoverage reports",
-      "help": "Coverage reports.",
-      "class": "file",
-      "patterns": ["*"]
-    },
-    {
-      "name": "DepthOfCoverage2",
-      "label": "DepthOfCoverage reports",
-      "help": "Coverage reports.",
-      "class": "file",
-      "patterns": ["*"]
-    },
-    {
-      "name": "DepthOfCoverage3",
-      "label": "DepthOfCoverage reports",
-      "help": "Coverage reports.",
-      "class": "file",
-      "patterns": ["*"]
-    },
-    {
-      "name": "DepthOfCoverage4",
-      "label": "DepthOfCoverage reports",
-      "help": "Coverage reports.",
-      "class": "file",
-      "patterns": ["*"]
-    },
-    {
-      "name": "DepthOfCoverage5",
-      "label": "DepthOfCoverage reports",
-      "help": "Coverage reports.",
-      "class": "file",
-      "patterns": ["*"]
-    },
-    {
-      "name": "DepthOfCoverage6",
-      "label": "DepthOfCoverage reports",
-      "help": "Coverage reports.",
-      "class": "file",
-      "patterns": ["*"]
-    },
-    {
-      "name": "DepthOfCoverage7",
-      "label": "DepthOfCoverage reports",
-      "help": "Coverage reports.",
-      "class": "file",
-      "patterns": ["*"]
-    },
-    {
-      "name": "DepthOfCoverage8",
-      "label": "DepthOfCoverage reports",
-      "help": "Coverage reports.",
-      "class": "file",
-      "patterns": ["*"]
     }
   ],
   "runSpec": {
